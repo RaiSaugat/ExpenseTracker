@@ -3,7 +3,7 @@ import { mount } from 'react-mounter';
 
 import MainLayout from './layouts/MainLayout';
 import { App } from '../imports/ui/App';
-import AddExpenseForm from '../imports/ui/pages/addExpenseForm';
+import AddExpensePage from '../imports/ui/pages/addExpensePage';
 
 FlowRouter.route('/', {
   action() {
@@ -16,7 +16,7 @@ FlowRouter.route('/', {
 FlowRouter.route('/add', {
   action() {
     mount(MainLayout, {
-      content: <AddExpenseForm />,
+      content: <AddExpensePage />,
     });
   },
 });

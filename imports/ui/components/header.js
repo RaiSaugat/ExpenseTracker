@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './header.scss';
+
 const Header = () => {
   return (
-    <header>
-      <h1>Home Expense</h1>
+    <header className="header">
+      <h1>Expense Tracker</h1>
       <nav>
         <ul>
           <li>

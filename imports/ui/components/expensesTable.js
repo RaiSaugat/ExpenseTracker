@@ -1,29 +1,29 @@
 import React from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
+
+import './expenseTable.scss';
+
+import Expense from './expense';
 import { Expenses } from '../../api/expenses';
 
 export default class ExpenseTable extends TrackerReact(React.Component) {
-  expenses() {
-    return Expenses.find().fetch();
+  expense() {
+    return Expenses.find({}, { sort: { createdAt: -1 } }).fetch();
   }
 
   render() {
-    let expenses = this.expenses();
+    let expenses = this.expense();
     return (
-      <div className="expenses-table">
+      <div className="expense-table">
         <div className="expense-header">
           <span>Type</span>
           <span>Amount</span>
           <span>Date</span>
+          <span>Actions</span>
         </div>
         <div className="expense-data">
           {expenses.map((expense) => {
-            return (
-              <p>
-                {expense.type} - {expense.amount} -{' '}
-                {moment(expense.createdAt).format('MMM Do YYYY')}
-              </p>
-            );
+            return <Expense key={expense._id} expense={expense} />;
           })}
         </div>
       </div>
