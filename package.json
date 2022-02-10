@@ -14,7 +14,7 @@
     "react-dom": "^16.13.0",
     "react-mounter": "^1.2.0",
     "react-router-dom": "^5.2.0",
-    "node-sass": "^4.14.1"
+    "node-sass": "^7.0.0"
   },
   "mainModule": {
     "client": "client/main.js",
